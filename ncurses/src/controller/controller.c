@@ -60,6 +60,8 @@ int controller_handle_key_press(void) {
     case 'q':
         return 0;
     case KEY_UP:
+    case 'W':
+    case 'w':
         switch (loc) {
         case 0:
             iter += 1000;
@@ -100,6 +102,8 @@ int controller_handle_key_press(void) {
         }
         break;
     case KEY_DOWN:
+    case 'S':
+    case 's':
         switch (loc) {
         case 0:
             iter -= 1000;
@@ -140,6 +144,8 @@ int controller_handle_key_press(void) {
         }
         break;
     case KEY_RIGHT:
+    case 'D':
+    case 'd':
         switch (loc) {
         case 0:
             iter += 100;
@@ -180,6 +186,8 @@ int controller_handle_key_press(void) {
         }
         break;
     case KEY_LEFT:
+    case 'A':
+    case 'a':
         switch (loc) {
         case 0:
             iter -= 100;
@@ -220,9 +228,13 @@ int controller_handle_key_press(void) {
         }
         break;
     case '.':
+    case 'M':
+    case 'm':
         loc = (loc + 1) % 6;
         break;
     case ',':
+    case 'N':
+    case 'n':
         loc = (((loc - 1) % 6) + 6) % 6;
         break;
     case ' ':
